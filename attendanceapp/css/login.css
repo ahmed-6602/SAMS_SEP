@@ -1,0 +1,189 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginform {
+    width: min(350px, 95%);
+    height: 450px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: all 0.3s ease;
+    padding: 20px;
+}
+
+.loginform:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45);
+}
+
+.inputgroup {
+    position: relative;
+    height: 45px;
+    width: 90%;
+    margin-bottom: 15px;
+}
+
+.inputgroup input {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    padding: 0 5px;
+}
+
+.inputgroup label {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.inputgroup input:hover,
+.inputgroup input:focus {
+    border-bottom-color: #4361ee;
+}
+
+.inputgroup input:hover + label,
+.inputgroup input:focus + label,
+.inputgroup input:valid + label {
+    top: -5px;
+    font-size: 12px;
+    color: #4361ee;
+}
+
+.divcallforaction {
+    width: 90%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.btnlogin {
+    width: 130px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btnlogin:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+}
+
+.inactivecolor {
+    background-color: #666;
+    cursor: not-allowed;
+}
+
+.activecolor {
+    background: linear-gradient(135deg, #4361ee 0%, #3f37c9 100%);
+}
+
+.diverror {
+    background-color: rgba(255, 59, 48, 0.1);
+    color: #ff3b30;
+    height: 45px;
+    width: 85%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.applyerrordiv {
+    visibility: visible;
+    opacity: 1;
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+.lockscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.applylockscreen {
+    visibility: visible;
+    opacity: 1;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #4361ee;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.lblwait {
+    color: white;
+    margin-top: 20px;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
